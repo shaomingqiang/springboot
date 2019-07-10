@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bionime.dao.UserMapper">
+
+	 <resultMap type="User" id="userMap">
+
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="name" property="name" jdbcType="VARCHAR" />  
+        <result column="age" property="age" jdbcType="INTEGER" />
+
+        
+    </resultMap>
+
+
+	<select id="selectUser" parameterType="INTEGER" resultMap="userMap">
+		select *
+		from user
+		where 1=1
+		and id = #{id}
+	</select>
+
+
+
+</mapper>
